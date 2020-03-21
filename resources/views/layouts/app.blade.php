@@ -23,8 +23,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <div><img src="img/logo.jpg" alt="" class="pr-3" style="height:32px;border-right: 1px solid #333;"></div>
+                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                    <div><img src="{{asset('img/logo.jpg')}}" alt="" class="pr-3" style="height:32px;border-right: 1px solid #333;"></div>
                     <div class="pl-3" style="font-size:23px">Instgram</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -56,7 +56,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="/following">
+                                        Following
+                                       </a>
+                                    <a class="dropdown-item " href="/profile/{{Auth::user()->id}}">
+                                     profile
+                                    </a>
+                                    <a class="dropdown-item border-top" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

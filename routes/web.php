@@ -21,9 +21,12 @@ Route::get('/email' , function(){
     return new NewUserWelcomeMail();
 });
 
+Route::get('/','HomeController@index')->name('home.index');
+
+
 Route::post('follow/{user}','FollowsController@store');
 
-Route::get('/','PostsController@index');
+Route::get('/following','PostsController@index');
 Route::get('/p/create','PostsController@create');
 Route::post('/p','PostsController@store');
 Route::get('/p/{post}','PostsController@show');
